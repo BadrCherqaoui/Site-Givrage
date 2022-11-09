@@ -249,7 +249,7 @@ a{
     transform: rotate(0deg);
     margin-bottom: 10px;
     margin-left: 40px;
-    color: rgb(255, 255, 255);
+    color: rgb(20, 20, 20);
     transition: width 1s, height 1s, background-color 1s, transform 1s, rotate 1s, translate 1s;
     font-size: 20px;
     font-family: "Poppins", sans-serif;
@@ -265,7 +265,7 @@ a{
     height: 300px;
     width: 250px;
     background-color: cornflowerblue;
-    /* background-image: url(./asset/Photo-CV.jpg);      */
+    background-image: url(./asset/alexis.jpg);     
     background-size: cover;
     background-position:center; 
     background-repeat: no-repeat;
@@ -280,7 +280,7 @@ a{
     height: 300px;
     width: 250px;
     background-color: brown;
-    /* background-image: url(./asset/Photo-CV.jpg);      */
+    background-image: url(./asset/photo_thomas.jpeg);     
     background-size: cover;
     background-position:center; 
     background-repeat: no-repeat;
@@ -295,7 +295,7 @@ a{
     height: 300px;
     width: 250px;
     background-color: coral;
-    /* background-image: url(./asset/Photo-CV.jpg);      */
+    background-image: url(./asset/Photo_cv.jpg);     
     background-size: cover;
     background-position:center; 
     background-repeat: no-repeat;
