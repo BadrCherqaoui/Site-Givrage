@@ -315,6 +315,37 @@ a{
     cursor: pointer;
 }
 
+.photo-1{
+    box-shadow: 4px 2px 29px 0 rgba(66, 156, 146, 0.563);
+    transition: box-shadow 1s; 
+}
+
+.photo-1:hover{
+    box-shadow: 4px 2px 29px 0 rgba(66, 156, 89, 0.469);
+}
+
+.photo-2{
+    box-shadow: 4px 2px 29px 0 rgba(70, 156, 66, 0.63);
+}
+.photo-2:hover{
+    box-shadow: 4px 2px 29px 0 rgba(66, 156, 144, 0.63);
+}
+
+.photo-3{
+    box-shadow: 4px 2px 29px 0 rgba(156, 150, 66, 0.63);
+}
+.photo-3:hover{
+    box-shadow: 4px 2px 29px 0 rgba(98, 156, 66, 0.63);
+}
+
+.photo-4{
+    box-shadow: 4px 2px 29px 0 rgba(106, 66, 156, 0.63);
+}
+.photo-4:hover{
+    box-shadow: 4px 2px 29px 0 rgba(146, 66, 156, 0.63);
+}
+
+
 .photo-1:hover .prenom_text{
     transform: translate(15px); 
     text-shadow: 0.4px 1px 2px;
