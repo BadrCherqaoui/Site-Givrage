@@ -248,7 +248,7 @@ a{
 .prenom_text{
     transform: rotate(0deg);
     margin-bottom: 10px;
-    margin-left: 40px;
+    margin-left: 48px;
     color: rgb(20, 20, 20);
     transition: width 1s, height 1s, background-color 1s, transform 1s, rotate 1s, translate 1s;
     font-size: 20px;
