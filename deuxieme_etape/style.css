@@ -247,8 +247,8 @@ a{
 .image-1{
 
     height: 500px;
-    width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_pos.png");  
+    width: 30%; 
+    background-image: url("./images/givrage_mesh_circ.png");  
     background-size: cover;
 }
 
@@ -258,8 +258,8 @@ a{
 
 
     height: 500px;
-    width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_vit.png");  
+    width: 30%; 
+    background-image: url("./images/Givrage_mesh_naca.png");  
     background-size: cover;
     z-index: 1000;
 }
@@ -270,7 +270,7 @@ a{
 
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_Re.png");  
+    background-image: url("./images/");  
     background-size: cover;
     z-index: 1000;
 }
@@ -279,8 +279,8 @@ a{
 
 
     height: 500px;
-    width: 33%; 
-    background-image: url("./images/xGouttes_cst_3D_pos.png");  
+    width: 40%; 
+    background-image: url("./images/interp_proj.jpg");  
     background-size: cover;
     z-index: 1000;
 }
@@ -291,7 +291,7 @@ a{
 
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1goutte_ecoulementpotentiel_2D-Pos.png");  
+    background-image: url("./images/interp_zoom_out_grossier.png");  
     background-size: cover;
     z-index: 1000;
 }
@@ -302,93 +302,21 @@ a{
 
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1goutte_ecpot_2D-Vitesse.png");  
+    background-image: url("./images/interp_zoom_grossier_avg.png");  
     background-size: cover;
     z-index: 1000;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 .image-7{
 
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_2D-RE.png");  
-    background-size: cover;
-}
-
-
-
-.image-8{
-
 
     height: 500px;
     width: 33%; 
-    background-image: url("./images/xGouttes_ecpot_2D.png");  
+    background-image: url("./images/interp_zoom_grossier.png");  
     background-size: cover;
     z-index: 1000;
 }
-
-
-.image-9{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte-ecpot-3D-pos.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-.image-10{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_3D-Vitesse.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-11{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_3D-RE.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-12{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/xGouttes_ecpot_3D_pos.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-
-
-
-
-
-
-
 
 
 

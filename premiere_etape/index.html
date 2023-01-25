@@ -74,15 +74,12 @@
                         
                         <div>
                             
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                            Mise en équations : </br>
+                            Dans un premier temps, l'étude analytique de la trajectoire des gouttes a été effectuée. On considère la force de traînée et on néglige le poids car en faisant le rapport de la norme des forces on remarque que le poids est négligeable. De plus l’interaction goutte-goutte n’a pas été prise en compte dans ce projet. Ainsi, en explicitant la force de traînée et  en faisant le bilan des forces, on peut retrouver l’équation (1). </br>
 
-                            <br>
+                            Cette équation dépend de la densité et du diamètre de la goutte, la viscosité dynamique de l’air, le coefficient de traînée (Cd) et le nombre de Reynolds. Tout d’abord, le coefficient de traînée dépend du nombre de Reynolds et peut prendre jusqu’à six valeurs dans notre étude, comme indiqué dans les équations (2). </br>
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-                            
-                            <br>
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                            Le nombre de Reynolds dépend quant à lui de la densité de l’air, la norme de la différence des vitesses entre la goutte et l’air et de la viscosité dynamique de l’air, ainsi que du diamètre de la goutte. Le nombre de Reynolds représente l’état de l’écoulement. En effet, plus le nombre de Reynolds sera élevé, plus l’écoulement tendra vers un écoulement turbulent. Dans un premier temps seul un écoulement laminaire est étudié, donc avec un faible nombre de Reynolds.
 
                         
                             <div class="trait-fin"> </div>
@@ -105,15 +102,9 @@
                             
                             <div>
 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-    
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-                                
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                                Implémentation : </br>
+                                L’implémentation du code s’est effectué en C++. Un schéma RK4 a été implémenté pour discrétiser la dérivée de u en temps. Après avoir obtenu des premiers résultats validés, une étude du nombre de Reynolds pour un écoulement constant et pour un écoulement potentiel a été effectuée. On peut remarquer que le nombre de Reynolds diminue constamment dans un écoulement constant. Cependant, on peut remarquer que dans un écoulement potentiel le nombre de Reynolds augmente de nouveau quand la vitesse de l’écoulement augmente autour du cercle.
+
 
                                 <div class="trait-fin"> </div>
                             
@@ -138,15 +129,9 @@
                             
                             <div>
 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-    
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-                                
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                                L’écoulement constant : </br>
+                                De plus, trois types d’écoulements ont été étudiés tout au long de ce projet. Premièrement, un écoulement constant a été analysé afin de valider le code. Plusieurs gouttes ont été jetées dans cet écoulement avec un obstacle en forme de cercle. Avec cette première validation de code, on peut voir en Figure 1 la trajectoire des gouttes impactant le cercle. Comme attendu, les gouttes ont des trajectoires rectilignes suivant les lignes de niveaux du flux.
+
 
                                 <div class="trait-fin"> </div>
                             
@@ -171,15 +156,9 @@
                             <div>
 
 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-    
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-                                
-                                <br>
-    
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                                L’écoulement potentiel : </br>
+                                Après cette validation, un écoulement plus complexe a été étudié. L'écoulement potentiel autour d’un cercle est analysé. On peut remarquer que dans cet exemple, les gouttes suivent cet écoulement potentiel avant l’obstacle, ce qui s’explique par une vitesse initiale de l’écoulement (100 m/s) très forte comparé à la taille de la goutte et parce-que le poids n’est pas considéré. La trajectoire de la goutte se détache de la ligne de niveau juste après l’obstacle quand la vitesse de l’écoulement commence à décroître. En étudiant la physique associée à ce phénomène, ces résultats étaient attendus.
+
 
                                 <div class="trait-fin"> </div>
                             
@@ -212,17 +191,10 @@
                         
                         <div>
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
+                            Étude 3D : </br>
+                            Par la suite, le code a été étendu au cas tridimensionnel. L’étude de l’écoulement potentiel autour d’un cylindre a été menée. Sur la figure ?, on peut constater que les résultats obtenus sont similaires à ceux obtenus en 2D pour ce même cas.
 
-                            <br>
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-                            
-                            <br>
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui voluptatem fuga, consequatur facilis optio maiores cum totam magni tenetur corporis recusandae suscipit ipsum ducimus distinctio nisi dolore? Velit, ipsa.<br>
-
-                            <div class="trait-fin"> </div>
                         
                         </div>
 
@@ -462,7 +434,7 @@
                     </div>
 
 
-                    <iframe width="500" height="320" class= "image-12" src="./asset/Enregistrement de l’écran 2022-11-06 à 15.58.15.mov"> </iframe>
+                    <!-- <iframe width="500" height="320" class= "image-12" src="./asset/Enregistrement de l’écran 2022-11-06 à 15.58.15.mov"> </iframe> -->
 
 
                 </div>

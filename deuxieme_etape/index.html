@@ -74,6 +74,8 @@
 
                     <div class="image-1"></div>
 
+                    <div class="image-2"></div>
+
                     <div class="ecrire">
                         
                         <div>
@@ -104,7 +106,7 @@
                             <div>
 
                                 Parcours du maillage : <br>
-                                A chaque itération en temps, il faut recalculer la position de la goutte dans le maillage. Nous avons observé que parcourir tout le maillage à chaque itération était très coûteux : avec le logiciel gprof on estime à environ 38% du temps de calcul effectué dans ce cas là. On a donc décidé d'optimiser le parcours du maillage en imposant une condition sur le pas de temps pour ne pas sauter plus d'une maille par itération, puis en ne recherchant la particule à t + dt seulement dans les voisins de la maille où elle se trouvait à t. On passe donc d'une recherche dans plus de 10 000 mailles par itération à moins d'une dizaine, et on relève un temps de calcul d'environ ... à l'aide de gprof. 
+                                A chaque itération en temps, il faut recalculer la position de la goutte dans le maillage. Nous avons observé que parcourir tout le maillage à chaque itération était très coûteux : avec le logiciel gprof on estime à environ 38% du temps de calcul effectué dans ce cas là. On a donc décidé d'optimiser le parcours du maillage en imposant une condition sur le pas de temps pour ne pas sauter plus d'une maille par itération, puis en ne recherchant la particule à t + dt seulement dans les voisins de la maille où elle se trouvait à t comme illustré en Figure ... . On passe donc d'une recherche dans plus de 10 000 mailles par itération à moins d'une dizaine, et on relève un temps de calcul d'environ ... à l'aide de gprof. 
 
                                 <div class="trait-fin"> </div>
                             
@@ -112,7 +114,7 @@
     
                         </div>
   
-                        <div class="image-2"></div>
+                        <div class="image-3"></div>
     
                     </div>
             </div>
@@ -123,7 +125,7 @@
 
                 <div class="contenu">
 
-                    <div class="image-1"></div>
+                    <div class="image-4"></div>
 
                     <div class="ecrire">
                         
@@ -150,6 +152,8 @@
             </div>
 
 
+            <div class="image-5"></div>
+
             <div class="first">
 
                 <div class="contenu">
@@ -166,7 +170,11 @@
 
                     </div>
 
-                    <div class="image-1"></div>
+                    <div class="image-6"></div>
+
+                    <div class="image-7"></div>
+
+
 
                 </div>
                 
