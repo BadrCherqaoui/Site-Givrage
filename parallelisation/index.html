@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Quatrième étape - Parallélisation</title>
+
+    </head>
+
+    <body>
+
+
+        <div class="all">
+
+            <div class="nav">
+
+                <ul class="logo_2">
+                    <a href="../index.html"><div class="logo_inria"></div></a>
+                </ul>
+
+                <ul class="milieu">
+
+                    <ul class="normal">
+                        <a href="../index.html"><li>Accueil</li></a>
+                        <div class="trait"></div>
+                    </ul>
+
+                    <ul class="particulier">  
+                        <a href="../Agenda/index.html"><li>Agenda</li></a>
+                        <div class="trait"></div>
+                    </ul>
+
+                    <ul class="normal">
+                        <a href="../Contacts/index.html"><li>Contacts</li></a>
+                        <div class="trait"></div>
+                    </ul>
+
+                </ul>
+
+                <a href="../index.html"><div class="logo"></div></a>
+                
+            
+            </div>
+
+            <div class="titre_partie">
+
+                <div>
+                    Parallélisation du code 
+                </div>
+                
+                
+            </div>
+
+            <div class="titre_photo">
+
+
+            </div>
+    
+            <div class="trait-niveau">
+
+                <div class="trait-intro">
+
+                </div>
+
+            </div>
+
+
+            <div class="first">
+
+                <div class="contenu">
+                    
+                    <div class="ecrire">
+                        
+                        <div>
+                 
+                            Dans cette quatrième partie, on s'intéresse à paralléliser notre code. Cet intérêt est légitime étant donné qu'une simulation effectuée avec 100 gouttes sur l'aile NACA inclinée à 4 degrés avec (x_0, y_0, u_0, v_0) = (-0.5, -0.082, 102.55, 7.17) sur un seul processeurs prend pas moins de 48 minutes. Il est donc indispensable de faire tourner ce code en parallèle pour obtenir nos résultats sur plusieurs centaines, voir milliers de gouttes, d'autant plus qu'on observe une nette amélioration du temps de calcul en augmentant le nombre de processeurs (pour 6 processeurs on passe à 12 minutes de calcul et pour 12 processeurs on arrive à 9 minutes). </br>
+
+                            En pratique, la parallélisation du code n'est pas très compliquée compte tenu de l'hypothèse d'indépendance de chacune des gouttes. On se sert d'une fonction de répartition de charge pour distribuer une quantité à peu près équivalente de gouttes à chaque processeurs. On s'est servi de la librairie MPI, cependant une piste d'amélioration de notre travail est d'utiliser la librairie OpenMP qui est beaucoup plus adaptée. </br>
+
+                            Dans la suite, on s'intéresse aux performances de la parallélisation effectuée à l'aide de courbes de speed-up et d'efficacité.
+                        
+                            <div class="trait-fin"> </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+            <div class="first">
+
+                <div class="contenu">
+                    
+                    <div class="ecrire">
+                        
+                        <div>
+
+                            Courbes de speed-up : 
+                            Le speed-up correspond à l'accelération du code. Il se calcule grâce à la formule : </br> 
+                            
+
+                            
+                            On peut conclure que la parallélisation du code a eu un réel impact sur les résultats en diminuant fortement le temps de calcul. Cependant, les résultats obtenus ne sont pas aussi optimaux que ce que nous espérions. En effet, étant donné qu’aucune communication n’est effectuée entre les gouttes, car il n’y a pas d’interaction entre elles, la courbe de speed-up devrait être bien meilleure. Utiliser 10 processeurs devrait diminuer le temps de calcul d’un peu moins de 10 fois car il n’y aucune communication. Seuls la lecture du fichier de maillage au début et le calcul de beta ne sont pas parallélisés. Cependant, la courbe de speed-up est loin de l’identité, alors que nous l’attendions juste en-dessous. De plus, on peut remarquer une coupure au bout de 6 processeurs, l’accélération est nettement ralentie. Ceci peut être dû à une utilisation de la mémoire cache, ou au fait qu’un processeur s’occupe de toutes les gouttes qui n'impactent pas ce qui met en attente les autres processeurs. Pour essayer d’améliorer cette courbe, l’accélération a été calculée en enlevant la lecture de maillage et sur un nombre d’itérations données (50), sans calcul d’impact ou de bêta. On peut remarquer que pour les cinq premiers processeurs la course de speed-up est presque égale à l’identité, ce qui est ce que l’on attendait et ce qui est beaucoup mieux, cependant, à partir de 6 processeurs, le même phénomène apparaît. Ceci confirme qu’un palier est atteint et que l’ajout de processeurs ne permet plus d’améliorer les performances. La courbe d’efficacité n’est pas optimale non plus, car pour plus de 6 processeurs, l’efficacité est en-dessous de 70%, ce qu’il faudrait éviter.
+
+
+
+                        
+                            <div class="trait-fin"> </div>
+                        
+                        </div>
+
+                    </div>
+
+                    <div class="image-5"></div>
+
+
+                </div>
+                
+            </div>
+
+
+            <div class="first">
+
+                <div class="contenu">
+
+                    <div class="image-1"></div>
+                    
+                    <div class="ecrire">
+                        
+                        <div>
+                            Autour d'un cercle : </br>
+
+                            Le coefficient de captation a été calculé autour d'un obstacle circulaire dans un premier temps. La figure obtenue est affichée en Figure 3, où bêta est affiché en fonction de la distance curviligne par rapport au point de stagnation. On remarque que la courbe obtenue est de la forme souhaitée, centrée et maximale en 0. On a pu remarquer que dans la partie négative de cette courbe, quelques points (qu'on a enlevé pour un affichage plus cohérent) sont à 0, ce qui vient d’un problème ponctuel dans le calcul de bêta. Ce problème peut provenir de deux gouttes qui tombent exactement sur le même point de maillage. Malgré ce petit défaut, on peut conclure que notre valeur de bêta est cohérente et que la courbe ressemble à ce que l’on espérait obtenir. Par la suite, on a pu calculer le coefficient de captation sur l’aile NACA inclinée de 4 degrés.
+
+                        
+                            <div class="trait-fin"> </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+            <div class="first">
+
+                <div class="contenu">
+                    
+                    <div class="ecrire">
+                        
+                        <div>
+                 
+                            Autour d'une aile NACA : </br>
+
+                            On avait des résultats issus de la littérature et de codes précédents pour l’aile NACA inclinée de 4 degrés, on a donc pu comparer nos résultats à ceux de la littérature. Les résultats sont affichés en Figure 4. On peut remarquer que nos résultats se rapprochent sensiblement des solutions de la littérature, en effet nos points sont en accord avec les résultats expérimentaux. Cependant, notre courbe est tronquée à ses extrémités. Cela est dû au fait que notre injection de gouttes n’est pas suffisamment raffinée aux extrémités. En raffinant cette injection, les prochains points de la courbe tombe directement à 0 car on est très proche des bords, et qu’il n’y a pas de gouttes sur toutes les mailles. De plus, on peut remarquer que la courbe n’est pas symétrique. Cela vient du fait que notre aile est inclinée de 4 degrés, ainsi la partie droite de la courbe est nettement plus linéaire et presque verticale. Cette courbe et ces résultats ont été tracés pour des gouttes ayant un diamètre de 20 micromètres. 
+
+                            <div class="trait-fin"> </div>
+                        
+                        </div>
+
+                    </div>
+
+                    <div class="image-2"></div>
+
+
+                </div>
+                
+            </div>
+
+
+            <div class="first">
+
+                <div class="contenu">
+
+                    <div class="image-3"></div>
+                    
+                    <div class="ecrire">
+                        
+                        <div>
+                 
+                            On fait varier le diamètre de la goutte et on compare les résultats obtenus sur le coefficient de captation. On peut remarquer que plus le diamètre augmente, plus le maximum de la courbe est grand et plus la base de la courbe est évasée. Ceci est en accord avec ce que l’on attendait, car physiquement plus les gouttes sont grandes, plus la glace sur les ailes sera étendue et plus il y aura de glace. Ceci est ce qui est représenté sur nos courbes de la Figure 5.
+
+                        
+                            <div class="trait-fin"> </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="bas">
+
+            <a href="../deuxieme_etape/index.html" class="test">
+                <img src="./asset/arrow-right-long-solid.svg" alt="" class="fleche">
+                <div class="suivant">Précédent - deuxième étape </div>
+            </a>
+           
+        </div>
+
+
+
+
+
+    </body>
+
+
+</html>
+
