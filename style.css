@@ -68,7 +68,7 @@ a{
     height: 100px;
 
     margin-left: 20px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     background-image: url("./asset/Logo_ENSEIRB-MATMECA-Bordeaux_INP.svg.png");  
     background-size: cover;
     background-repeat: no-repeat;
@@ -161,10 +161,9 @@ a{
 }
 
 .etapes{
-    padding-top: 150px;
-
+    padding-top: 120px;
     display: flex ;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between; 
     align-items: center;
 }
@@ -174,9 +173,10 @@ a{
 .milieu_haut{
     display: flex;
     flex-direction: row;
-    height: 400px;
-    width: 50%;
-    margin: 70px 50px;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    margin-top: 70px;
 }
 
 .titre{
@@ -184,10 +184,17 @@ a{
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    margin: 0 50px;
+    margin: 10px 50px;
     color: rgb(0, 0, 0);
+
     
 }
+
+.titre div{
+    text-shadow:1px 1px 2px rgba(129, 249, 255, 0.76);
+}
+
+
 .gros{
     font-size: 35px;
     font-weight: bold;
@@ -208,9 +215,10 @@ a{
 .espace{
 
     margin: 5px 10px;
-    height: 400px;
+    height: 170px;
     width: 220px;
-    background-image: url("./asset/pexels-isabella-mendes-348481.jpg");  
+    background-color: antiquewhite;
+    /* background-image: url("./asset/pexels-isabella-mendes-348481.jpg");   */
     background-size: cover;
     background-position:top; 
     background-position: center;
@@ -224,7 +232,6 @@ a{
     flex-direction: column;
 
 }
-
 
 
 
@@ -244,6 +251,7 @@ a{
     margin-top: 30px;
     text-align: center;
 }
+
 .cas{
     display: flex;
     color: black;
@@ -271,3 +279,29 @@ a{
 
 
 
+
+.intro{
+    background-color: rgba(244, 244, 244, 0.627);
+    width: 90%;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 30px;
+    font-style:italic;
+}
+
+.text-intro{
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.texte{
+    text-align: center;
+    width: 90%;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+}
