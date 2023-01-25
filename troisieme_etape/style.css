@@ -245,138 +245,44 @@ a{
 }
 
 .image-1{
-
     height: 500px;
-    width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_pos.png");  
+    width: 50%; 
+    background-image: url("./images/captation_cercle.png");  
     background-size: cover;
 }
 
 
 
 .image-2{
-
-
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_vit.png");  
+    background-image: url("./images/beta-4.png");  
     background-size: cover;
     z-index: 1000;
 }
 
 
 .image-3{
-
-
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1Goutte_cst_2D_Re.png");  
+    background-image: url("./images/different-beta.png");  
     background-size: cover;
     z-index: 1000;
 }
 
 .image-4{
-
-
     height: 500px;
     width: 33%; 
-    background-image: url("./images/xGouttes_cst_3D_pos.png");  
+    background-image: url("./images/bombardement.png");  
     background-size: cover;
     z-index: 1000;
 }
 
 
 .image-5{
-
-
     height: 500px;
     width: 33%; 
-    background-image: url("./images/1goutte_ecoulementpotentiel_2D-Pos.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-6{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_2D-Vitesse.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.image-7{
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_2D-RE.png");  
-    background-size: cover;
-}
-
-
-
-.image-8{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/xGouttes_ecpot_2D.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-9{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte-ecpot-3D-pos.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-.image-10{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_3D-Vitesse.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-11{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/1goutte_ecpot_3D-RE.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
-
-.image-12{
-
-
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/xGouttes_ecpot_3D_pos.png");  
+    background-image: url("./images/beta_explication.png");  
     background-size: cover;
     z-index: 1000;
 }
