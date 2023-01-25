@@ -247,7 +247,7 @@ a{
 .image-1{
     height: 500px;
     width: 50%; 
-    background-image: url("./images/captation_cercle.png");  
+    background-image: url("./images/speed_up.png");  
     background-size: cover;
 }
 
@@ -256,7 +256,7 @@ a{
 .image-2{
     height: 500px;
     width: 33%; 
-    background-image: url("./images/beta-4.png");  
+    background-image: url("./images/efficiency.png");  
     background-size: cover;
     z-index: 1000;
 }
@@ -265,7 +265,7 @@ a{
 .image-3{
     height: 500px;
     width: 33%; 
-    background-image: url("./images/different-beta.png");  
+    background-image: url("./images/speed_up_50iter.png");  
     background-size: cover;
     z-index: 1000;
 }
@@ -273,20 +273,10 @@ a{
 .image-4{
     height: 500px;
     width: 33%; 
-    background-image: url("./images/bombardement.png");  
+    background-image: url("./images/efficiency_50iter.png");  
     background-size: cover;
     z-index: 1000;
 }
-
-
-.image-5{
-    height: 500px;
-    width: 33%; 
-    background-image: url("./images/beta_explication.png");  
-    background-size: cover;
-    z-index: 1000;
-}
-
 
 
 .trait-fin{
