@@ -50,7 +50,7 @@ a{
 
 .all{
     
-    height: 200vh;
+    height: 500vh;
 
 }
 
@@ -334,18 +334,9 @@ a{
 
     font-family: "Poppins", sans-serif;
     font-size: 17px;
-    margin-right: 550px;
-    padding-bottom: 5pxx;
-    color: black;
-    transform: translatey(-3px);
+    margin-right: 5px;
     text-decoration: underline;
-}
-
-.fleche{
-    margin-right: 10px;
-    transform: rotate(180deg);
-    height: 20px;
-    width: 20px;
+    color: black;
 }
 
 .test{
@@ -413,4 +404,44 @@ a{
     margin-top: 190px;
     width: 750px;
     height: 550px;
+}
+
+
+
+.bas{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* position: fixed;  */
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 150px; 
+    background: lightgrey; 
+    box-shadow: -4px -12px 63px -29px rgba(0, 0, 0, 0.4); 
+
+}
+
+.test{
+    display: flex; 
+    flex-direction: row;
+}
+
+
+.fleche{
+    padding-top: 3px;
+    margin-right: 50px;
+    height: 20px;
+    width: 20px;
+
+}
+
+.fleche_gauche{
+    transform: rotate(180deg);
+    margin-top: 3px;
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
 }
