@@ -175,8 +175,8 @@ a{
 .titre_photo{
     width: 100%;  
     height: 500px;
-    background-image: url("./asset/An-example-of-one-CFD-realization-for-the-inviscid-transonic-airfoil-case.png");  
-    background-size: cover;
+    background-image: url("./images/mesh-avion.jpeg");  
+    background-size: contain;
     background-position:bottom; 
     background-repeat: no-repeat;
 
@@ -495,18 +495,30 @@ a{
     background-color: red;
     margin-top: 50px;
     height: 350px;
-    width: 30%; 
+    width: 100%; 
     background-size: cover;
     z-index: 10;
 }
 
 
 .image-11{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: red;
     margin-top: 50px;
     height: 350px;
-    width: 30%; 
+    width: 100%; 
+    background-size: cover;
+    z-index: 10;
+}
+
+
+
+.test-11{
+
+    height: 350px;
+    width: 100%; 
     background-size: cover;
     z-index: 10;
 }
@@ -517,28 +529,24 @@ a{
     background-color: red;
     margin-top: 50px;
     height: 350px;
-    width: 30%; 
+    width: 100%; 
     background-size: cover;
     z-index: 10;
 }
 
 .image-13{
-    justify-content: center;
-    align-items: center;
     margin-top: 50px;
     height: 350px;
-    width: 30%; 
+    width: 100%; 
     background-size: cover;
     z-index: 10;
 }
 
 
 .image-14{
-    justify-content: center;
-    align-items: center;
     margin-top: 50px;
     height: 250px;
-    width: 30%; 
+    width: 100%; 
     background-size: cover;
     z-index: 10;
 }
@@ -556,4 +564,33 @@ a{
     width: 90%; 
     background-size: cover;
     z-index: 10;
+}
+
+
+.first-10{
+    margin-left: 60px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 70vh; 
+    width: 100%; 
+    /* background-color: black;  */
+
+}
+
+.ligne{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+.legende-134{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 49%;
 }

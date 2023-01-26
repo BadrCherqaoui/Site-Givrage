@@ -35,7 +35,7 @@ a{
     /* background-color: rgba(0, 255, 255, 0); */
     background-color: rgba(237, 242, 255, 0.416);
     transition: width 0.5s, height 1s, background-color 0.4s, transform 0.5s;
-    z-index: 1000;
+    z-index: 100000;
 
 }
 
@@ -261,7 +261,7 @@ a{
     width: 40%; 
     background-image: url("./images/1Goutte_cst_2D_vit.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -272,7 +272,7 @@ a{
     width: 40%; 
     background-image: url("./images/1Goutte_cst_2D_Re.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .image-4{
@@ -281,7 +281,7 @@ a{
     width: 50%; 
     background-image: url("./images/xGouttes_cst_3D_pos.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -292,7 +292,7 @@ a{
     width: 40%; 
     background-image: url("./images/1goutte_ecoulementpotentiel_2D-Pos.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -303,7 +303,7 @@ a{
     width: 50%;  
     background-image: url("./images/1goutte_ecpot_2D-Vitesse.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -334,7 +334,7 @@ a{
     width: 37%; 
     background-image: url("./images/xGouttes_ecpot_2D.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -344,7 +344,7 @@ a{
     width: 60%; 
     background-image: url("./images/1goutte-ecpot-3D-pos.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .image-10{
@@ -352,7 +352,7 @@ a{
     width: 45%; 
     background-image: url("./images/1goutte_ecpot_3D-Vitesse.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -362,7 +362,7 @@ a{
     width: 38%; 
     background-image: url("./images/1goutte_ecpot_3D-RE.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
@@ -371,7 +371,7 @@ a{
     width: 45%; 
     background-image: url("./images/xGouttes_ecpot_3D_pos.png");  
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
