@@ -49,9 +49,8 @@ a{
 }
 
 .all{
-    
-    height: 500vh;
-
+    height: auto; 
+    /* height: 500vh; */
 }
 
 .logo{

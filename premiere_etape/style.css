@@ -50,7 +50,9 @@ a{
 
 .all{
     
-    height: 500vh;
+    /* height: 500vh; */
+    height: auto; 
+    /* background-color: #000651; */
 
 }
 
@@ -216,7 +218,7 @@ a{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    height: 100vh; 
+    height: 80vh; 
     width: 100%; 
     /* background-color: black;  */
 
@@ -228,9 +230,8 @@ a{
     flex-direction: row; 
     justify-content: space-around; 
     margin-top: 100px; 
-    height: 500px; 
+    height: 600px; 
     width: 100%; 
-    
 }
 
 .ecrire{
@@ -240,15 +241,26 @@ a{
     align-content: center;
     justify-content: center; 
     height: 500px;
-    width: 30%; 
+    width: 35%; 
+    font-family: "Poppins", sans-serif; 
+}
+
+.ecrire-1{
+
+    display: flex; 
+    flex-direction: column; 
+    align-content: center;
+    justify-content: center; 
+    height: 500px;
+    width: 80%; 
     font-family: "Poppins", sans-serif; 
 }
 
 .image-1{
 
     height: 500px;
-    width: 48%; 
-    background-image: url("./images/1Goutte_cst_2D_pos.png");  
+    width: 30%; 
+    background-image: url("./images/Equation.png");  
     background-size: cover;
 }
 
@@ -422,4 +434,55 @@ a{
 
 .test{
     display: flex; 
+}
+
+.gras{
+    font-weight: bold;
+}
+
+
+
+.image-reg{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 500px;
+}
+
+
+.Re-1{
+
+    height: auto;
+    width: 83%;
+}
+.Re-2{
+
+    height: auto;
+    width: 80%;
+}
+
+.legende{
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+
+.Ecoulement-lin{
+    height: auto;
+    width: 100%;
+}
+
+.image-reg-2{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 500px;
 }

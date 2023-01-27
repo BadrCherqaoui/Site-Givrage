@@ -50,7 +50,9 @@ a{
 
 .all{
     
-    height: 350vh;
+    /* height: 350vh; */
+    height: auto; 
+
 }
 
 .logo{

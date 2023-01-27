@@ -51,7 +51,8 @@ a{
 
 .all{
     
-    height: 700vh;
+    height: auto; 
+    /* height: 700vh; */
 
 }
 
