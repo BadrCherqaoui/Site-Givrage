@@ -259,6 +259,17 @@ a{
     font-family: "Poppins", sans-serif; 
 }
 
+.ecrire-100{
+
+    display: flex; 
+    flex-direction: column; 
+    align-content: center;
+    justify-content: center; 
+    height: 500px;
+    width: 40%; 
+    font-family: "Poppins", sans-serif; 
+}
+
 .ecrire-1{
 
     display: flex; 
@@ -608,7 +619,7 @@ a{
 
 .intersection{
 
-    width: 50%;
+    width: 30%;
     height: auto;
 }
 
