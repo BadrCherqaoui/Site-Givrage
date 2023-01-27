@@ -6,6 +6,8 @@
 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <title>Troisème étape - Givrage</title>
 
     </head>
@@ -18,7 +20,7 @@
             <div class="nav">
 
                 <ul class="logo_2">
-                    <a href="../index.html"><div class="logo_inria"></div></a>
+                    <a href="https://www.inria.fr/fr"><div class="logo_inria"></div></a>
                 </ul>
 
                 <ul class="milieu">
@@ -40,7 +42,7 @@
 
                 </ul>
 
-                <a href="../index.html"><div class="logo"></div></a>
+                <a href="https://www.bordeaux-inp.fr/fr"><div class="logo"></div></a>
                 
             
             </div>
@@ -103,7 +105,7 @@
                         
                         <div>
                  
-                            Maintenant que nous avons la position des points d'impacts des gouttelettes sur l'aile, on s'intéresse au calcul du coefficient de captation. Ce coefficient de captation quantifie le volume d’eau qui s'accumule sur l'aile et prend des valeurs entre 0 et 1. Plus il est élevé et plus le volume d’eau sur l'aile est important. Cela nous permet de déterminer le profil que prendra l'accumulation de glace sur l'aile et notamment les zones où l'accrétion de givre sur l'aile est maximale. Pour implémenter le calcul de ce coefficient bêta, il faut connaître tous les impacts et les points initiaux associés aux impacts. Bêta est calculé selon la formule (4). </br>
+                            Maintenant que nous avons la position des points d'impacts des gouttelettes sur l'aile, on s'intéresse au calcul du coefficient de captation. Ce coefficient de captation quantifie le volume d’eau qui s'accumule sur l'aile et prend des valeurs entre 0 et 1. Plus il est élevé et plus le volume d’eau sur l'aile est important. Cela nous permet de déterminer le profil que prendra l'accumulation de glace sur l'aile et notamment les zones où l'accrétion de givre sur l'aile est maximale. Pour implémenter le calcul de ce coefficient bêta, il faut connaître tous les impacts et les points initiaux associés aux impacts. Bêta est calculé selon la formule \(\beta = \frac{dy}{ds}\). </br>
 
                             En pratique, on recherche deux impacts qui entourent une goutte et on calcule l’écart entre ces deux impacts que l’on divise par la différence de leur position initiale. On illustre le principe du calcul de beta sur la Figure 2.
 

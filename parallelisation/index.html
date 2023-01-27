@@ -20,7 +20,7 @@
             <div class="nav">
 
                 <ul class="logo_2">
-                    <a href="../index.html"><div class="logo_inria"></div></a>
+                    <a href="https://www.inria.fr/fr"><div class="logo_inria"></div></a>
                 </ul>
 
                 <ul class="milieu">
@@ -42,7 +42,7 @@
 
                 </ul>
 
-                <a href="../index.html"><div class="logo"></div></a>
+                <a href="https://www.bordeaux-inp.fr/fr"><div class="logo"></div></a>
                 
             
             </div>
@@ -81,7 +81,7 @@
                         
                         <div>
                  
-                            Dans cette quatrième partie, on s'intéresse à paralléliser notre code. Cet intérêt est légitime étant donné qu'une simulation effectuée avec 100 gouttes sur l'aile NACA inclinée à 4 degrés avec (x_0, y_0, u_0, v_0) = (-0.5, -0.082, 102.55, 7.17) sur un seul processeurs prend pas moins de 48 minutes. Il est donc indispensable de faire tourner ce code en parallèle pour obtenir nos résultats sur plusieurs centaines, voir milliers de gouttes, d'autant plus qu'on observe une nette amélioration du temps de calcul en augmentant le nombre de processeurs (pour 6 processeurs on passe à 12 minutes de calcul et pour 12 processeurs on arrive à 9 minutes). </br>  </br>
+                            Dans cette quatrième partie, on s'intéresse à paralléliser notre code. Cet intérêt est légitime étant donné qu'une simulation effectuée avec 100 gouttes sur l'aile NACA inclinée à 4 degrés avec \((x_0, y_0, u_0, v_0) = (-0.5, -0.082, 102.55, 7.17)\) sur un seul processeur prend pas moins de 48 minutes. Il est donc indispensable de faire tourner ce code en parallèle pour obtenir nos résultats sur plusieurs centaines, voir milliers de gouttes, d'autant plus qu'on observe une nette amélioration du temps de calcul en augmentant le nombre de processeurs (pour 6 processeurs on passe à 12 minutes de calcul et pour 12 processeurs on arrive à 9 minutes). </br>  </br>
 
                             En pratique, la parallélisation du code n'est pas très compliquée compte tenu de l'hypothèse d'indépendance de chacune des gouttes. On se sert d'une fonction de répartition de charge pour distribuer une quantité à peu près équivalente de gouttes à chaque processeurs. On s'est servi de la librairie MPI, cependant une piste d'amélioration de notre travail est d'utiliser la librairie OpenMP qui est beaucoup plus adaptée. </br>
 
@@ -110,7 +110,8 @@
                             Le speed-up correspond à l'accelération du code. Il se calcule grâce à la formule : \(S = \frac{\text{temps sequentiel}}{\text{temps parallele}} \). <br> </br> 
                             
 
-                            On trace en Figure 1 le speed-up calculé pour de réelles simulations avec impact un large banc d'ensemencement des gouttes qui viennent taper (ou non) sur l'obstacle. Etant donné qu'il n'y a aucune communications entre les processeurs lors des calculs, on espérait obtenir une courbe de speed-up proche de l'identité, c'est-à-dire que le temps d'exéctution par le code sur 1 processeur serait égal à N fois le temps mis par le code avec N processeurs. Cependant on observe une évolution linéaire avec un coefficient directeur de 0.6 pour les 6 premiers processeurs, puis une évolution linéaire moins forte avec un coefficient directeur de 0.2 environ. Au vu de ces résultats, nous avons pensé que la pente plus faible de la courbe de speed-up venait de l'utilisation de la bibliothèque MPI : contrairement à OpenMP où chaque thread éxecute des tâches jusqu'à ce qu'il n'y en ait plus, le code MPI calcul les coefficients beta par batch de processeurs. Ainsi, si un processeur met plus de temps à exécuter ses tâches que les autres, c'est lui qui décidera du temps de l'entiereté du batch. Plus le nombre de processeurs sera élevé, plus cet effet sera visible à cause de la répartition de gouttes à l'aide de la fonction charge qui n'est pas aléatoire : certains processeurs n'auront qu'à faire des calculs jusqu'à l'impact des gouttes tandis que d'autres devront sans cesse attendre que la goutte sorte du domaine de calcul. On explique ainsi la première partie de la Figure 1. 
+                            On trace en Figure 1 le speed-up calculé pour de réelles simulations avec impact un large banc d'ensemencement des gouttes qui viennent taper (ou non) sur l'obstacle. Etant donné qu'il n'y a aucune communications entre les processeurs lors des calculs, on espérait obtenir une courbe de speed-up proche de l'identité, c'est-à-dire que le temps d'exéctution par le code sur 1 processeur serait égal à N fois le temps mis par le code avec N processeurs. Cependant on observe une évolution linéaire avec un coefficient directeur de 0.6 pour les 6 premiers processeurs, puis une évolution linéaire moins forte avec un coefficient directeur de 0.2 environ. <br> <br>
+                            Au vu de ces résultats, nous avons pensé que la pente plus faible de la courbe de speed-up venait de l'utilisation de la bibliothèque MPI : contrairement à OpenMP où chaque thread éxecute des tâches jusqu'à ce qu'il n'y en ait plus, le code MPI calcul les coefficients beta par batch de processeurs. Ainsi, si un processeur met plus de temps à exécuter ses tâches que les autres, c'est lui qui décidera du temps de l'entiereté du batch. Plus le nombre de processeurs sera élevé, plus cet effet sera visible à cause de la répartition de gouttes à l'aide de la fonction charge qui n'est pas aléatoire : certains processeurs n'auront qu'à faire des calculs jusqu'à l'impact des gouttes tandis que d'autres devront sans cesse attendre que la goutte sorte du domaine de calcul. On explique ainsi la première partie de la Figure 1. 
                             
                             <br> <br> On a vérifié notre hypothèse en faisant tourner le code sur 50 itérations pour qu'aucune goutte n'impacte l'obstacle et qu'on ait une répartition des tâches équitable entre les processeurs. On obtient la Figure 2, et on observe bien une évolution (en rouge) quasi-idéale du speed-up pour un nombre de processeurs variant entre 1 et 5. </br>
 
