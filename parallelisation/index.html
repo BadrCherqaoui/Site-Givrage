@@ -6,6 +6,8 @@
 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <title>Quatrième étape - Parallélisation</title>
 
     </head>
@@ -105,7 +107,7 @@
                         <div class="ecriture">
 
                             <div class="gras">Courbes de speed-up : </div> </br>
-                            Le speed-up correspond à l'accelération du code. Il se calcule grâce à la formule : </br> 
+                            Le speed-up correspond à l'accelération du code. Il se calcule grâce à la formule : \(S = \frac{\text{temps sequentiel}}{\text{temps parallele}} \). <br> </br> 
                             
 
                             On trace en Figure 1 le speed-up calculé pour de réelles simulations avec impact un large banc d'ensemencement des gouttes qui viennent taper (ou non) sur l'obstacle. Etant donné qu'il n'y a aucune communications entre les processeurs lors des calculs, on espérait obtenir une courbe de speed-up proche de l'identité, c'est-à-dire que le temps d'exéctution par le code sur 1 processeur serait égal à N fois le temps mis par le code avec N processeurs. Cependant on observe une évolution linéaire avec un coefficient directeur de 0.6 pour les 6 premiers processeurs, puis une évolution linéaire moins forte avec un coefficient directeur de 0.2 environ. Au vu de ces résultats, nous avons pensé que la pente plus faible de la courbe de speed-up venait de l'utilisation de la bibliothèque MPI : contrairement à OpenMP où chaque thread éxecute des tâches jusqu'à ce qu'il n'y en ait plus, le code MPI calcul les coefficients beta par batch de processeurs. Ainsi, si un processeur met plus de temps à exécuter ses tâches que les autres, c'est lui qui décidera du temps de l'entiereté du batch. Plus le nombre de processeurs sera élevé, plus cet effet sera visible à cause de la répartition de gouttes à l'aide de la fonction charge qui n'est pas aléatoire : certains processeurs n'auront qu'à faire des calculs jusqu'à l'impact des gouttes tandis que d'autres devront sans cesse attendre que la goutte sorte du domaine de calcul. On explique ainsi la première partie de la Figure 1. 
@@ -162,7 +164,7 @@
                     
                     <div>
 
-                        On peut aussi s'intéresser aux courbes d'efficacité en considérant les deux mêmes cas que précédemment. L'efficacité est définie par :
+                        On peut aussi s'intéresser aux courbes d'efficacité en considérant les deux mêmes cas que précédemment. L'efficacité est définie par : \(e = \frac{\text{S}}{\text{Nb procs}} \). <br>
 
                         Elle permet de déterminer, à l'aide d'une valeur seuil à ne pas dépasser, à partir de quand il n'est plus très intéressant de continuer à ajouter des processeurs pour l'exécution du code. </br>
 

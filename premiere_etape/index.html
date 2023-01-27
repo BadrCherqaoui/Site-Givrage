@@ -50,7 +50,7 @@
             <div class="titre_partie">
 
                 <div>
-                    Mise en équation et Validations 
+                    Mise en équation et validations 
                 </div>
                 
                 
@@ -77,14 +77,16 @@
                             
                             <div class="gras">Mise en équations :</div> </br>
                             Dans un premier temps, l'étude analytique de la trajectoire des gouttes a été effectuée. On considère la force de traînée et on néglige le poids car en faisant le rapport de la norme des forces on remarque que le poids est négligeable. De plus l’interaction goutte-goutte n’a pas été prise en compte dans ce projet. <br> <br>
-                            Ainsi, en explicitant la force de traînée et  en faisant le bilan des forces, on peut retrouver l’équation :  \( \frac{du}{dt} = K(u_a-u) \) Avec : \( K = \frac{3\mu_a C_d Re}{4\rho d^2} \) et \( Re = \frac{\rho a || u_a - u ||d}{\mu_a} \). <br> <br>
+                            Ainsi, en explicitant la force de traînée et  en faisant le bilan des forces, on peut retrouver l’équation :<br> <br>
+                            <div class="centrer"> \( \frac{du}{dt} = K(u_a-u) \text{  Avec :  } K = \frac{3\mu_a C_d Re}{4\rho d^2} \text{  et  } Re = \frac{\rho a || u_a - u ||d}{\mu_a} \). </div><br> <br> 
                             Cette équation dépend de la densité et du diamètre de la goutte, la viscosité dynamique de l’air, le coefficient de traînée \( C_d\) et le nombre de Reynolds. Tout d’abord, le coefficient de traînée dépend du nombre de Reynolds et peut prendre jusqu’à six valeurs dans notre étude, comme <br> <br> indiqué dans les équations \( C_d = \left\{
                                 \begin{array}{ll}
-                                    0 \\
-                                    \tau_{si} & \mbox{si } \{s,i\} \in E \\
-                                    \tau_{si} & \mbox{si } \{s,i\} \in E \\
-                                    \tau_{si} & \mbox{si } \{s,i\} \in E \\
-                                    \infty & \mbox{sinon.}
+                                    0 & \mbox{si } Re = 0 \\
+                                    \frac{24}{Re} & \mbox{si } Re \in ]0,0.5] \\
+                                    \frac{27.17}{Re^{0.821}} & \mbox{si } Re \in ]0.5,10] \\
+                                    \frac{15.268}{Re^{0.571}} & \mbox{si } Re \in ]10,100] \\
+                                    \frac{6.877}{Re^{0.398}} & \mbox{si } Re \in ]100,1000] \\
+                                    0.44 & \mbox{sinon.}
                                 \end{array}
                             \right. \) </br> <br>
                             
