@@ -50,7 +50,7 @@ a{
 
 .all{
     
-    height: 390vh;
+    height: 350vh;
 }
 
 .logo{
@@ -414,4 +414,9 @@ a{
     flex-direction: row;
     height: 900px;
     width: 100%;
+}
+
+.first-2 div{
+
+    margin: 0px 70px; 
 }
