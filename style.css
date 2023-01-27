@@ -297,6 +297,7 @@ a{
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .texte{
