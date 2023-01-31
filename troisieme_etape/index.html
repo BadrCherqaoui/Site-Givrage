@@ -76,7 +76,7 @@
 
                     <div class="legend">
                         <img src="./images/bombardement.png" class="test-1">
-                        <div class="text-legend">Figure 1 : Écoulement d'Euler incliné à 4°</div>
+                        <div class="text-legend">Figure 1 : Écoulement d'Euler sur une aile inclinée de 4°</div>
                     </div>
                     
                     <div class="ecrire">
@@ -105,9 +105,9 @@
                         
                         <div>
                  
-                            Maintenant que nous avons la position des points d'impacts des gouttelettes sur l'aile, on s'intéresse au calcul du coefficient de captation. Ce coefficient de captation quantifie le volume d’eau qui s'accumule sur l'aile et prend des valeurs entre 0 et 1. Plus il est élevé et plus le volume d’eau sur l'aile est important. Cela nous permet de déterminer le profil que prendra l'accumulation de glace sur l'aile et notamment les zones où l'accrétion de givre sur l'aile est maximale. Pour implémenter le calcul de ce coefficient bêta, il faut connaître tous les impacts et les points initiaux associés aux impacts. Bêta est calculé selon la formule \(\beta = \frac{dy}{ds}\). </br>
+                            Maintenant que nous avons la position des points d'impacts des gouttelettes sur l'aile, on s'intéresse au calcul du coefficient de captation \(\beta\). Ce coefficient de captation quantifie le volume d’eau qui s'accumule sur l'aile et prend des valeurs entre 0 et 1. Plus il est élevé et plus le volume d’eau sur l'aile est important. Cela nous permet de déterminer le profil que prendra l'accumulation de glace sur l'aile et notamment les zones où l'accrétion de givre sur l'aile est maximale. Pour implémenter le calcul de ce coefficient \(\beta\), il faut connaître tous les impacts et les points initiaux associés aux impacts. Le coefficient de captation est calculé selon la formule \(\beta = \frac{dy}{ds}\) où \(dy\) et \(ds\) sont des distances définies sur la Figure 2. </br>  </br>
 
-                            En pratique, on recherche deux impacts qui entourent une goutte et on calcule l’écart entre ces deux impacts que l’on divise par la différence de leur position initiale. On illustre le principe du calcul de beta sur la Figure 2.
+                            En pratique, on recherche deux impacts qui entourent une goutte et on calcule l’écart entre ces deux impacts que l’on divise par la différence de leur position initiale. On illustre le principe du calcul du coefficient de captation à l'aide de la Figure 2.
 
 
                         
@@ -135,7 +135,7 @@
 
                     <div class="legend">
                         <div class="image-10"><img src="./images/captation_cercle.png" class="test-10"></div>
-                        <div class="text-legend">Figure 3 : Résultat β pour un cercle</div>
+                        <div class="text-legend">Figure 3 : Coefficient β pour un cercle</div>
                     </div>
 
                     
@@ -144,7 +144,7 @@
                         <div>
                             <div class="gras">Autour d'un cercle :</div> </br>
 
-                            Le coefficient de captation a été calculé autour d'un obstacle circulaire dans un premier temps. La figure obtenue est affichée en Figure 3, où bêta est affiché en fonction de la distance curviligne par rapport au point de stagnation. On remarque que la courbe obtenue est de la forme souhaitée, centrée et maximale en 0. On a pu remarquer que dans la partie négative de cette courbe, quelques points (qu'on a enlevé pour un affichage plus cohérent) sont à 0, ce qui vient d’un problème ponctuel dans le calcul de bêta. Ce problème peut provenir de deux gouttes qui tombent exactement sur le même point de maillage. Malgré ce petit défaut, on peut conclure que notre valeur de bêta est cohérente et que la courbe ressemble à ce que l’on espérait obtenir. Par la suite, on a pu calculer le coefficient de captation sur l’aile NACA inclinée de 4 degrés.
+                            Le coefficient de captation a été calculé autour d'un obstacle circulaire dans un premier temps. La figure obtenue est affichée en Figure 3, où \(\beta\) est affiché en fonction de la distance curviligne par rapport au point de stagnation. On remarque que la courbe obtenue est de la forme souhaitée, centrée et maximale en 0. On a pu remarquer que dans la partie négative de cette courbe, quelques points (qu'on a enlevé pour un affichage plus cohérent) sont à 0, ce qui vient d’un problème ponctuel dans le calcul de bêta. Ce problème peut provenir de deux gouttes qui tombent exactement sur le même point de maillage. Malgré ce petit défaut, on peut conclure que notre valeur de bêta est cohérente et que la courbe ressemble à ce que l’on espérait obtenir. Par la suite, on a pu calculer le coefficient de captation sur l’aile NACA inclinée de 4 degrés.
 
                         
                             <div class="trait-fin"> </div>
@@ -168,7 +168,7 @@
                  
                             <div class="gras">Autour d'une aile NACA :</div> </br>
 
-                            On avait des résultats issus de la littérature et de codes précédents pour l’aile NACA inclinée de 4 degrés, on a donc pu comparer nos résultats à ceux de la littérature. Les résultats sont affichés en Figure 4. On peut remarquer que nos résultats se rapprochent sensiblement des solutions de la littérature, en effet nos points sont en accord avec les résultats expérimentaux. Cependant, notre courbe est tronquée à ses extrémités. Cela est dû au fait que notre injection de gouttes n’est pas suffisamment raffinée aux extrémités. En raffinant cette injection, les prochains points de la courbe tombe directement à 0 car on est très proche des bords, et qu’il n’y a pas de gouttes sur toutes les mailles. De plus, on peut remarquer que la courbe n’est pas symétrique. Cela vient du fait que notre aile est inclinée de 4 degrés, ainsi la partie droite de la courbe est nettement plus linéaire et presque verticale. Cette courbe et ces résultats ont été tracés pour des gouttes ayant un diamètre de 20 micromètres. 
+                            On avait des résultats issus de la littérature et de codes précédents pour l’aile NACA inclinée de 4 degrés, on a donc pu comparer nos résultats à ceux de la littérature. Les résultats sont affichés en Figure 4. On peut remarquer que nos résultats se rapprochent sensiblement des solutions de la littérature, en effet nos points (en bleu) sont en accord avec les résultats expérimentaux. Cependant, notre courbe est tronquée à ses extrémités. Cela est dû au fait que notre injection de gouttes n’est pas suffisamment raffinée aux extrémités. En raffinant cette injection, les prochains points de la courbe tombe directement à 0 car on est très proche des bords, et qu’il n’y a pas de gouttes sur toutes les mailles. De plus, on peut remarquer que la courbe n’est pas symétrique. Cela vient du fait que notre aile est inclinée de 4 degrés, ainsi la partie droite de la courbe est nettement plus linéaire et presque verticale. Cette courbe et ces résultats ont été tracés pour des gouttes ayant un diamètre de 20 micromètres. 
 
                             <div class="trait-fin"> </div>
                         
@@ -179,7 +179,7 @@
 
                     <div class="legend">
                         <img src="./images/beta-4.png" class="test-6">
-                        <div class="text-legend">Figure 4 : Résultat β pour l'aile NACA inclinée à 4°</div>
+                        <div class="text-legend">Figure 4 : Coefficient β pour l'aile NACA inclinée à 4°</div>
                     </div>
 
                 </div>
@@ -199,6 +199,8 @@
                     <div class="ecrire">
                         
                         <div>
+
+                            <div class="gras">Influence de la taille de la goutte :</div> </br>
                  
                             On fait varier le diamètre de la goutte et on compare les résultats obtenus sur le coefficient de captation. On peut remarquer que plus le diamètre augmente, plus le maximum de la courbe est grand et plus la base de la courbe est évasée. Ceci est en accord avec ce que l’on attendait, car physiquement plus les gouttes sont grandes, plus la glace sur les ailes sera étendue et plus il y aura de glace. Ceci est ce qui est représenté sur nos courbes de la Figure 5.
 

@@ -148,9 +148,9 @@
                         <div>
                  
                             <div class="gras">Méthodes d'interpolation :</div> <br>
-                            On veut savoir la vitesse de la particule qui se trouve dans une maille sachant qu'on connait la vitesse de l'écoulement à chacun des noeuds de la maille. Pour cela, on utilise une méthode d'interpolation parmis trois. <br>
+                            On veut savoir la vitesse de la particule qui se trouve dans une maille sachant qu'on connait la vitesse de l'écoulement à chacun des noeuds de la maille. Pour cela, on utilise une méthode d'interpolation parmis trois. </br> </br>
 
-                            La première et la plus classique d'entre elles consiste à prendre la moyenne des vitesses en chacun des noeuds comme vitesse de la particule. Elle servira de référence aux deux autres un peu plus complexes. On la défini de la manière suivante : \( u_{interp} = \frac{1}{3} \sum_{k=1}^3   u_{node\_k} \).  <br> <br>
+                            La première et la plus classique d'entre elles consiste à considérer la moyenne des vitesses en chacun des noeuds comme vitesse de la particule. Elle servira de référence aux deux autres un peu plus complexes. On la défini de la manière suivante : \( u_{interp} = \frac{1}{3} \sum_{k=1}^3   u_{node\_k} \).  <br> <br>
 
                             La deuxième méthode utilise la projection du vecteur entre la position de la goutte et un des sommets de la maille sur les deux arrêtes adjacentes à ce sommet comme en Figure 4. On obtient ensuite la vitesse de la particule en utilisant : \(u_{interp} = (1-\alpha - \beta) \times u_1 + \alpha \times u_2 + \beta \times u_3 \). <br> <br>
 
@@ -210,7 +210,7 @@
                             <img src="./images/maillagefin_v_m_p_goutte(1).png" alt="" class="image-auto">
                             <div class="image-1-legende"> Figure 6 : Résultats des interpolations sur maillage raffiné </div>
                             <img src="./images/giv_int.png" alt="" class="image-auto-1">
-                            <div class="image-1-legende"> Table 1 : Calcul des erreurs </div>
+                            <div class="image-1-legende"> Tableau 1 : Calcul des erreurs </div>
                         </div>
 
 
@@ -218,7 +218,7 @@
                             
                             <div>
 
-                                On utilise ensuite un maillage plus raffiné. A l'aide de la Figure 6, on constate que l'effet de la méthode d'interpolation utilisée est beaucoup moins visible. Toutefois, la méthode d'interpolation utilisée continuer à jouer un rôle sur l'exactitude de la solution. Pour voir cela, on calcule les erreurs \( L^2 \) à l'aide de la formule \( Erreur = \sqrt{ \sum_i \| u_a^i - u_{a\_exact}^i \|^2 \cdot dt } \) et on obtient le tableau 1. On voit que bien que les deux dernières interpolations se valent pour un maillage grossier, la méthode utilisant la projection est plus efficace pour un maillage fin. C'est donc cette méthode qu'on choisira dans la suite.
+                                On utilise ensuite un maillage plus raffiné. A l'aide de la Figure 6, on constate que l'effet de la méthode d'interpolation utilisée est beaucoup moins visible. Toutefois, la méthode d'interpolation utilisée continuer à jouer un rôle sur l'exactitude de la solution. Pour voir cela, on calcule les erreurs \( L^2 \) à l'aide de la formule \( Erreur = \sqrt{ \sum_i \| u_a^i - u_{a\_exact}^i \|^2 \cdot dx } \) et on obtient le tableau 1. On voit que bien que les deux dernières interpolations se valent pour un maillage grossier, la méthode utilisant la projection est plus efficace pour un maillage fin. C'est donc cette méthode qu'on choisira dans la suite.
                                
 
                                 <div class="trait-fin"> </div>
@@ -241,9 +241,9 @@
                             <div>
 
                                 <div class="gras">Détermination du point d'impact:</div><br>
-                                On cherche à déterminer le point d'impact entre la trajectoire de la gouttelette et l'obstacle en tenant compte du maillage. <br>
+                                On cherche à déterminer le point d'impact entre la trajectoire de la gouttelette et l'obstacle en tenant compte du maillage. <br> <br>
 
-                                On dispose de la dernière position avant impact de la gouttelette \(p_{old}\) et de la position p que la gouttelette aurait eu s'il n'y avait pas d'élément physique qui bloquait son chemin. On a également pu récupérer lors de la lecture du maillage la liste des arrêtes de l'obstacle et les coordonnées de leurs sommets dans le plan. En considérant qu'avant l'impact la gouttelette se trouve sur la maille i, la première idée était d'itérer sur la liste pour trouver l'arrête appartenant à l'obstacle et à la maille M dans laquelle se trouvait la goutte en \(p_{old}\), puis de calculer le point d'intersection entre cette arrête et la droite passant par \(p_{old}\) et p comme dessiné sur la Figure 7.                                 
+                                On dispose de la dernière position avant impact de la gouttelette \(p_{old}\) et de la position \(p\) que la gouttelette aurait eu s'il n'y avait pas d'élément physique qui bloquait son chemin. On a également pu récupérer lors de la lecture du maillage la liste des arrêtes de l'obstacle et les coordonnées de leurs sommets dans le plan. En considérant qu'avant l'impact la gouttelette se trouve sur la maille M, la première idée était d'itérer sur la liste des arrêtes de l'obstacle pour trouver celle appartenant à la maille M dans laquelle se trouvait la goutte en \(p_{old}\), puis de calculer le point d'intersection entre cette arrête et la droite passant par \(p_{old}\) et \(p\) comme dessiné sur la Figure 7.                                 
 
                                 <div class="trait-fin"> </div>
                             
@@ -268,8 +268,8 @@
                     
                     <div class="legende">
                         <img src="./images/1F46B1D8-E862-4527-9D5B-020F9EA26651.jpg" alt="" class="intersection">
-                        <div class="image-1-legende"> Figure 8.a : Détermination du point d'impact </div>
-                        <img src="./images/1798A13F-6155-492B-BA1E-FFF4D2FEC29E.jpg" alt="" class="intersection">
+                        <div class="image-1-legende"> Figure 8.a : Détermination naïve du point d'impact </div>
+                        <img src="./images/impact_curved.jpg" alt="" class="intersection">
                         <div class="image-1-legende"> Figure 8.b : Détermination du point d'impact exact</div>
 
 
@@ -279,7 +279,9 @@
                     <div class="ecrire">
                         
                         <div>
-                            Toutefois cette première façon de penser est naïve dans la mesure où, bien qu'elle fonctionne dans la plupart des cas considérés, elle est mise en défaut lorsque l'on considère des trajectoires de gouttelettes moins droite comme en Figure 8.a. Pour remédier à ce problème, on considère aussi les arrêtes de l'obstacle appartenant aux mailles voisines à M en se basant sur le fait que la position d'une gouttellete ne peut pas varier de plus d'une maille en une itération temporelle (voir Figure 8.b). Une fois ces arrêtes trouvées, on calcule les points d'intersections entre ces arrêtes et la trajectoire de la gouttellete entre \(p_{old}\) et p. Enfin,on vérifie si les points d'intersections trouvés appartiennent bien à leurs arrêtes respectives. Si c'est le cas, le point trouvé est le point d'impact. 
+                            Toutefois cette première façon de penser est naïve dans la mesure où, bien qu'elle fonctionne dans la plupart des cas considérés, elle est mise en défaut lorsque l'on considère des trajectoires de gouttelettes plus courbées comme en Figure 8.a. </br> </br>
+
+                            Pour remédier à ce problème, on considère aussi les arrêtes de l'obstacle appartenant aux mailles voisines à M en se basant sur le fait que la position d'une gouttellete ne peut pas varier de plus d'une maille en une itération temporelle (voir Figure 8.b). Une fois ces arrêtes trouvées, on calcule les points d'intersections entre ces arrêtes et la trajectoire de la gouttellete entre \(p_{old}\) et \(p\). Enfin,on vérifie si les points d'intersections trouvés appartiennent bien à leurs arrêtes respectives. Si c'est le cas, le point trouvé est le point d'impact. 
                             <div class="trait-fin"> </div>
                         
                         </div>
@@ -297,10 +299,10 @@
                     <div class="ecrire">
                         
                         <div>
-                            <div class="gras">Calcul de l'impact :</div> <br>
+                            <div class="gras">Calcul de l'impact :</div> </br>
                             En pratique, il faut considérer deux cas lors de la programmation : <br>
-                                1) la goutte en \(p_{old}\) est dans une maille avec une arrête appartenant à l'obstacle (Figure 9)<br>
-                                2) la goutte en \(p_{old}\) est dans une maille avec un seul sommet appartenant à l'obstacle (Figure 9)
+                                1) la goutte en \(p_{old}\) est dans une maille avec une arrête appartenant à l'obstacle (côté gauche de la Figure 9)<br>
+                                2) la goutte en \(p_{old}\) est dans une maille avec un seul sommet appartenant à l'obstacle (côté droit de la Figure 9)
                         
                             <div class="trait-fin"> </div>
                         
